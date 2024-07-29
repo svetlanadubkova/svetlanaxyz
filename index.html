@@ -133,24 +133,29 @@ font-size: 0.8rem;
 
 .scroll-text {
     white-space: nowrap;
-    animation: scroll-left 120s linear infinite;
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 20s linear infinite;
 }
 
 @keyframes scroll-left {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-200%); }
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
 }
 
 /* Add some chaos to the animation */
 .sticky-header:hover .scroll-text {
-    animation-duration: 120s;
+    animation-duration: 15s;
     animation-timing-function: ease-in-out;
 }
 </style>
 </head>
 <body>
 <div class="sticky-header">
-  <div class="scroll-text">i backed my car into a cop car the other day well he just drove off sometimes life's okay i ran my mouth off a bit too much oh what did i say.. well you just laughed it off it was all okay :) and we'll all float on okay and we'll all float on okay and we'll all float on okay and we'll all float on anyway!!!! a fake jamaican took every last dime with that scam it was worth it just to learn some sleight of hand bad news comes don't you worry even when it lands good news will work its way to all them plans (god's plan) !! we both got fired on exactly the same day well we'll float on good news is on the way <3 bring it on here we are win or lose win or lose win or lose win or lose win or lose i can't say and we'll all float on okay and we'll all float on okay and we'll all float on okay and we'll all float on alright already we'll all float on no don't you worry we'll all float on <3 alright already we'll all float on alright don't worry we'll all float on and we'll all float on alright already we'll all float on alright don't worry even if things end up a bit too heavy we'll all float on <3 alright already we'll all float on i'm told "don't function" and listen everyday alright already we'll all float on the worlds' still going strong okay don't worry we'll all float on even if things get heavy we'll all float on.. alright already we'll all float on alright now don't you worry we'll all float on alright we'll all float on!!!! </div>
+  <div class="scroll-text">
+    i backed my car into a cop car the other day well he just drove off sometimes life's okay i ran my mouth off a bit too much oh what did i say.. well you just laughed it off it was all okay :) and we'll all float on okay and we'll all float on okay and we'll all float on okay and we'll all float on anyway!!!! 
+    i backed my car into a cop car the other day well he just drove off sometimes life's okay i ran my mouth off a bit too much oh what did i say.. well you just laughed it off it was all okay :) and we'll all float on okay and we'll all float on okay and we'll all float on okay and we'll all float on anyway!!!! 
+  </div>
 </div>
 <div class="parallax-container">
 <div class="parallax-layer parallax-bg"></div>
