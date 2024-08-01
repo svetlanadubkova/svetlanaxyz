@@ -148,6 +148,19 @@ font-size: 0.8rem;
     animation-duration: 50s;
     animation-timing-function: ease-in-out;
 }
+
+/* Floating cigarette styles */
+#floating-cigarette {
+    position: fixed;
+    width: 40px;
+    height: auto;
+    z-index: 9999;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+#floating-cigarette:hover {
+    transform: scale(1.1);
+}
 </style>
 </head>
 <body>
@@ -177,6 +190,10 @@ font-size: 0.8rem;
 <div id="contact">
 <a href="mailto:svetlanadubkova@outlook.com">contact me</a>
 </div>
+
+<!-- Floating cigarette easter egg -->
+<img id="floating-cigarette" src="https://i.imgur.com/3iaqFC7.png" alt="Floating Cigarette">
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 const lyrics = `I hear you be the block, but I'm the lights that keep the streets on Notice you the type, that like to keep them on a leash though I'm known to walk alone, but I'm alone for a reason Sending me a drink ain't appeasing, believe me Come harder, this won't be easy Don't doubt yourself trust me, you need me This ain't no shoulder with a chip, or an ego But what you think they all mad at me for? You need a real woman in your life (that's a good look) Taking care, home and still fly (that's a good look) And I'ma help you build up your account (that's a good look) Better yet a hood look, believe me (ladies that's a good look) When you're in them big meetings, for the mills (that's a good look) You take me just to complement the deals (that's a good look) And anything you cop, I'll split the bill (that's a good look) Better yet a hood look, believe me (ladies that's a good look) Partner, let me upgrade you, Audemars-Piguet you Switch your neck ties to purple labels Upgrade you, I can (up), can I? (Up), lett me (up) grade you Partner, let me upgrade you Partner, let me upgrade you`;
@@ -216,6 +233,40 @@ title.style.transform = `translateY(${scrollPosition * 0.5}px)`;
 }
 
 parallaxContainer.addEventListener('scroll', handleScroll);
+
+// Floating cigarette easter egg
+const cigarette = document.getElementById('floating-cigarette');
+let x = Math.random() * (window.innerWidth - 40);
+let y = -40;
+let dx = (Math.random() - 0.5) * 2;
+let dy = 1;
+
+function animateCigarette() {
+    x += dx;
+    y += dy;
+
+    if (x < 0 || x > window.innerWidth - 40) {
+        dx = -dx;
+    }
+
+    if (y > window.innerHeight - 40) {
+        y = window.innerHeight - 40;
+        dy = -dy * 0.8;
+    }
+
+    dy += 0.05;
+
+    cigarette.style.left = `${x}px`;
+    cigarette.style.top = `${y}px`;
+
+    requestAnimationFrame(animateCigarette);
+}
+
+animateCigarette();
+
+cigarette.addEventListener('click', () => {
+    window.open('https://www.ebay.com/itm/326218651412', '_blank');
+});
 });
 </script>
 </body>
